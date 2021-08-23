@@ -1,5 +1,6 @@
 package com.example.studentservice;
 
+import com.example.studentservice.controller.StudentController;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;

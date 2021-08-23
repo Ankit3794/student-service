@@ -1,12 +1,13 @@
-package com.example.studentservice;
+package com.example.studentservice.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import com.example.studentservice.model.Student;
+import org.springframework.stereotype.Component;
 
-@Service
-public class StudentRepository {
+@Component
+public class StudentService {
 	private static List<Student> students = new ArrayList<>();
 	static {
 		students.add(new Student(1, "James"));
@@ -14,15 +15,15 @@ public class StudentRepository {
 		students.add(new Student(3, "Anna"));
 	}
 
-	public static List<Student> getAllStudents() {
+	public List<Student> getAllStudents() {
 		return students;
 	}
 
-	public static Student getStudent(int id) {
+	public Student getStudent(int id) {
 		return students.stream().findFirst().filter(student -> student.getId() == id).orElse(null);
 	}
 
-	public static Student addStudent(Student student){
+	public Student addStudent(Student student){
 		students.add(student);
 		return student;
 	}

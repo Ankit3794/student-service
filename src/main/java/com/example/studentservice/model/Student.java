@@ -1,4 +1,4 @@
-package com.example.studentservice;
+package com.example.studentservice.model;
 
 public class Student {
     private int id;
